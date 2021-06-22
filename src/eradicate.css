@@ -244,6 +244,13 @@ html:not([data-nfe-enabled='false']) table#hnmain .itemlist {
   display: none;
 }
 
+/* Vrt */
+html:not([data-nfe-enabled='false']) body > div.vrt-page {
+	opacity: 0 !important;
+	pointer-events: none !important;
+	height: 0 !important;
+  }
+
 /* LinkedIn */
 html:not([data-nfe-enabled='false']) main.scaffold-layout__main > div:last-child > div:not(#nfe-container) {
 	opacity: 0 !important;
@@ -273,6 +280,8 @@ html:not([data-nfe-enabled='false']) #primary > #nfe-container {
 	opacity: 0 !important;
 	pointer-events: none !important;
 }
+
+
 
 /* Instagram feed, stories, recommended accounts */
 

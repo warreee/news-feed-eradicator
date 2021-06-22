@@ -1,4 +1,13 @@
-export type SiteId = 'facebook' | 'twitter' | 'reddit' | 'hackernews' | 'linkedin' | 'youtube' | 'instagram' | 'github';
+export type SiteId =
+	| 'facebook'
+	| 'twitter'
+	| 'reddit'
+	| 'hackernews'
+	| 'linkedin'
+	| 'youtube'
+	| 'instagram'
+	| 'github'
+	| 'vrt';
 
 export const Sites: Record<SiteId, Site> = {
 	facebook: {
@@ -16,10 +25,7 @@ export const Sites: Record<SiteId, Site> = {
 		label: 'Instagram',
 		domain: 'instagram.com',
 		paths: ['/'],
-		origins: [
-			'http://www.instagram.com/*',
-			'https://www.instagram.com/*',
-		],
+		origins: ['http://www.instagram.com/*', 'https://www.instagram.com/*'],
 	},
 	twitter: {
 		label: 'Twitter',
@@ -37,19 +43,27 @@ export const Sites: Record<SiteId, Site> = {
 		label: 'LinkedIn',
 		domain: 'linkedin.com',
 		paths: ['/', '/feed/'],
-		origins: [
-			'http://www.linkedin.com/*',
-			'https://www.linkedin.com/*',
-		],
+		origins: ['http://www.linkedin.com/*', 'https://www.linkedin.com/*'],
 	},
 	reddit: {
 		label: 'Reddit',
 		domain: 'reddit.com',
 		paths: ['/', '/r/all/', '/r/popular/']
-			.map((i) => [i + '', i + 'home/', i + 'hot/', i + 'new/', i + 'top/', i + 'rising/'])
+			.map((i) => [
+				i + '',
+				i + 'home/',
+				i + 'hot/',
+				i + 'new/',
+				i + 'top/',
+				i + 'rising/',
+			])
 			.reduce((i, j) => i.concat(j)),
-		origins: ["https://www.reddit.com/*", "http://www.reddit.com/*",
-			"https://old.reddit.com/*", "http://old.reddit.com/*"],
+		origins: [
+			'https://www.reddit.com/*',
+			'http://www.reddit.com/*',
+			'https://old.reddit.com/*',
+			'http://old.reddit.com/*',
+		],
 	},
 	hackernews: {
 		label: 'Y Combinator News (HN)',
@@ -62,6 +76,12 @@ export const Sites: Record<SiteId, Site> = {
 		domain: 'github.com',
 		paths: ['/'],
 		origins: ['https://github.com/*'],
+	},
+	vrt: {
+		label: 'Vrt',
+		domain: 'vrt.be',
+		paths: ['/'],
+		origins: ['https://vrt.be/*'],
 	},
 };
 
